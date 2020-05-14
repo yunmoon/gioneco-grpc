@@ -46,7 +46,7 @@ const grpcClient = new GrpcClient({
   registry: register
 })
 function run() {
-  const client = grpcClient.getGrpcClient("helloworld.Services")
+  const client = grpcClient.getGrpcClient("helloworld")
   const user = 'world111111111111';
   if (client) {
     client.sayHello({name: user}, function(err, response) {

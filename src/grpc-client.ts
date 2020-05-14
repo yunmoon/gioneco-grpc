@@ -45,7 +45,7 @@ export class GrpcClient {
     }
   }
   getGrpcClient(serviceName) {
-    const clients = this.clients[serviceName];
+    const clients = this.clients[`${serviceName}.Services`];
     if (!clients || !clients.length) {
       return false
     }

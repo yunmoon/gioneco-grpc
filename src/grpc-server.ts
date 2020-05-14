@@ -47,12 +47,14 @@ export class GrpcServer {
       const packageDefinitionInfo: any = grpc.loadPackageDefinition(packageDefinition);
       for (const protoPackage of Object.keys(packageDefinitionInfo)) {
         const serviceFuncs: any = {}
-        for (const funcKey of Object.keys(packageDefinitionInfo[protoPackage].Services.service)) {
-          if (this.serviceFunctionMap[`${protoPackage}.${funcKey}`]) {
-            serviceFuncs[funcKey] = this.serviceFunctionMap[`${protoPackage}.${funcKey}`]
+        if (packageDefinitionInfo[protoPackage].Services) {
+          for (const funcKey of Object.keys(packageDefinitionInfo[protoPackage].Services.service)) {
+            if (this.serviceFunctionMap[`${protoPackage}.${funcKey}`]) {
+              serviceFuncs[funcKey] = this.serviceFunctionMap[`${protoPackage}.${funcKey}`]
+            }
+            services.push(`${protoPackage}.Services`)
+            this.server.addService(packageDefinitionInfo[protoPackage].Services.service, serviceFuncs)
           }
-          services.push(`${protoPackage}.Services`)
-          this.server.addService(packageDefinitionInfo[protoPackage].Services.service, serviceFuncs)
         }
       }
     }
