@@ -53,8 +53,8 @@ export class GrpcServer {
               serviceFuncs[funcKey] = this.serviceFunctionMap[`${protoPackage}.${funcKey}`]
             }
             services.push(`${protoPackage}.Services`)
-            this.server.addService(packageDefinitionInfo[protoPackage].Services.service, serviceFuncs)
           }
+          this.server.addService(packageDefinitionInfo[protoPackage].Services.service, serviceFuncs)
         }
       }
     }
