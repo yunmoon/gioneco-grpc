@@ -1,6 +1,6 @@
 {
   "name": "gioneco-grpc",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -19,7 +19,8 @@
     "google-protobuf": "^3.12.0-rc.2",
     "grpc": "^1.24.2",
     "koa": "^2.11.0",
-    "koa-router": "^8.0.8"
+    "koa-router": "^8.0.8",
+    "nacos-naming": "^2.0.0"
   },
   "devDependencies": {
     "@types/consul": "^0.23.34",

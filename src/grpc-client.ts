@@ -1,7 +1,8 @@
-import { ServiceRegistry } from "./service-registry";
+
 import { getProtoFiles } from "./util";
 import { loadSync } from "@grpc/proto-loader";
 import * as grpc from "grpc";
+import ServiceRegistry from "./interfaces/service-registry";
 
 
 export class GrpcClient {

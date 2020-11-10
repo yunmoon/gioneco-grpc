@@ -1,10 +1,10 @@
 import { loadSync } from "@grpc/proto-loader";
 import * as grpc from "grpc";
-import { ServiceRegistry } from "./service-registry";
 import { ip } from "address";
 import Consul = require("consul");
 import { startCheckHealthServer } from "./server-check-health";
 import { getProtoFiles } from "./util";
+import ServiceRegistry from "./interfaces/service-registry";
 
 export class GrpcServer {
   private ip: string

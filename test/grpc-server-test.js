@@ -1,8 +1,8 @@
 const {GrpcServer} = require("../dist/grpc-server")
 
-const {ServiceRegistry} = require("../dist/service-registry")
+const {NacosServiceRegistry} = require("../dist/nacos-service-registry")
 
-const register = new ServiceRegistry({
+const register = new NacosServiceRegistry({
   host: "127.0.0.1",
   port: 8500,
   promisify: true,
